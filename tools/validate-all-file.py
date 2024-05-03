@@ -195,7 +195,7 @@ def main():
         check_json_j2,
         check_docker_become,
     )
-    return sum([check() for check in checks])
+    return sum(check() for check in checks)
 
 
 if __name__ == "__main__":
