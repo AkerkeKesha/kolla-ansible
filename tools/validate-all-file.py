@@ -112,7 +112,7 @@ def check_json_j2():
 
     def validate_json_j2(root, filename):
         env = jinja2.Environment(  # nosec: not used to render HTML
-            loader=jinja2.FileSystemLoader(root))
+            loader=jinja2.FileSystemLoader(root), autoescape=True)
         env.filters['bool'] = bool_filter
         env.filters['basename'] = basename_filter
         env.filters['kolla_address'] = kolla_address_filter_mock
