@@ -59,7 +59,7 @@ class TestKollaAddressFilter(unittest.TestCase):
 
     def setUp(self):
         # Bandit complains about Jinja2 autoescaping without nosec.
-        self.env = jinja2.Environment()  # nosec
+        self.env = jinja2.Environment(autoescape=True)  # nosec
         self.env.filters['bool'] = _to_bool
 
     def _make_context(self, parent):
